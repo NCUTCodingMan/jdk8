@@ -1,5 +1,8 @@
 package com.rain.lamanda;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Lambda {
     
     public void print(Default obj) {
@@ -18,6 +21,7 @@ public class Lambda {
         public default void defaultMethod(String s) {
             System.out.println("default method of interface");
         }
+        @SuppressWarnings("unused")
         public static void staticMethod(String s) {
             System.out.println("static method of interface");
         }
@@ -44,5 +48,15 @@ public class Lambda {
         new Lambda().print(() -> {
             System.out.println("函数式接口,Lamanda表达式");
         });
+        
+        new Lambda().print(new DefaultImpl()::abstractMethod);
+        
+        new Thread(() -> {
+            System.out.println("实现Runnable的run()");
+        }).start();
+        
+        // Collection实现了Iterable
+        List<String> strs = Arrays.asList("One", "Three", "Four");
+        strs.forEach(n -> {System.out.println(n);});
     }
 }
