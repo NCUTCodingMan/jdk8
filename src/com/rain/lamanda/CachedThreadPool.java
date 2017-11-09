@@ -17,7 +17,7 @@ public class CachedThreadPool {
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++) {
             final Date date = new Date();
-            executorService.execute(() -> {
+            executorService.execute(() -> {                
                 System.out.println(date);
             });
         }
