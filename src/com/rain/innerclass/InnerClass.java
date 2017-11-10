@@ -21,6 +21,6 @@ public class InnerClass {
     public static void main(String[] args) {
         InnerClass innerClass = new InnerClass();
         Inner inner = innerClass.new Inner();
-       System.out.println(innerClass == inner.f());
+        System.out.println(innerClass == inner.f());
     }
 }
